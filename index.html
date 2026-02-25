@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAC-MAN 🎮</title>
+  <meta name="description" content="Classic Pac-Man arcade game — eat dots, avoid ghosts, score big!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <header id="game-header">
+      <div class="hud-left">
+        <span class="hud-label">SCORE</span>
+        <span id="score" class="hud-value">0</span>
+      </div>
+      <h1 id="game-title">PAC-MAN</h1>
+      <div class="hud-right">
+        <span class="hud-label">LIVES</span>
+        <span id="lives" class="hud-value">❤️❤️❤️</span>
+      </div>
+    </header>
+
+    <div id="game-container">
+      <canvas id="game-canvas"></canvas>
+
+      <div id="overlay-start" class="overlay">
+        <div class="overlay-content glass">
+          <h2>🕹️ PAC-MAN</h2>
+          <p>Eat all dots. Avoid ghosts!</p>
+          <p class="controls-hint">Arrow Keys / WASD to move</p>
+          <button id="btn-start" class="btn-neon">START GAME</button>
+        </div>
+      </div>
+
+      <div id="overlay-gameover" class="overlay hidden">
+        <div class="overlay-content glass">
+          <div id="chicken-spin-container">
+            <img id="chicken-img" src="/images/chickencover.jpg" alt="Chicken on tree" />
+          </div>
+          <h2>💀 GAME OVER</h2>
+          <p>Final Score: <span id="final-score">0</span></p>
+          <button id="btn-restart" class="btn-neon">PLAY AGAIN</button>
+        </div>
+      </div>
+
+      <div id="overlay-win" class="overlay hidden">
+        <div class="overlay-content glass">
+          <h2>🎉 YOU WIN!</h2>
+          <p>Score: <span id="win-score">0</span></p>
+          <button id="btn-win-restart" class="btn-neon">PLAY AGAIN</button>
+        </div>
+      </div>
+    </div>
+
+    <footer id="game-footer">
+      <p>⬆️⬇️⬅️➡️ or WASD to move • Eat 🔵 power pellets to hunt ghosts!</p>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
